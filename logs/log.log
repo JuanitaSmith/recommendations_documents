@@ -1,0 +1,7 @@
+2025-03-04 12:49:52 INFO     Loading data/articles_community.csv...
+2025-03-04 12:49:52 INFO     Loading data/user_item_interactions.csv...
+2025-03-04 12:49:52 INFO     Article contents loaded with shape (1056, 4)
+2025-03-04 12:49:52 INFO     User interactions loaded with shape (45993, 3)
+2025-03-04 12:49:52 INFO     Content dataset cleaned, shape (1034, 4) and columns ['doc_body', 'doc_description', 'doc_full_name', 'doc_body_all']
+2025-03-04 12:49:52 INFO     Interaction dataset cleaned, shape (21454, 3) an columns ['article_id', 'title', 'user_id']
+2025-03-04 12:49:53 INFO     Not recommendations found

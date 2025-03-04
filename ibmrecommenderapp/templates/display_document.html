@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<div class="mt-3, m-lg-3">
+
+    <h4 class="text">Article id: {{content['article_id']}}</h4>
+    <h1 class="text">{{content['doc_full_name']}}</h1>
+
+    <h4>{{content['doc_description']}}</h4>
+    <hr />
+
+    <pre>
+            <p>{{content['doc_body']}}</p>
+        </pre>
+
+</div>
+
+<!--footer section-->
+<footer>
+    <script type="text/javascript">
+        var content = {{content | safe}};
+    </script>
+</footer>
+
+{% endblock %}

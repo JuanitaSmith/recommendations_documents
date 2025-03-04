@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+
+{% block user_input %}
+
+<!--title and user input    -->
+<div class="container">
+    <h1 class="text-center">IBM Recommender</h1>
+    <p class="text-center">Welcome to our document library</p>
+
+    <form style="width: 60%; margin: 0 auto; text-align: center;" action="/recommender" method="POST">
+
+        <div class="row m-lg-5 align-items-center">
+            <div class="col-auto">
+                <label for="inputUserId" class="col-form-label">User Id</label>
+            </div>
+            <div class="col-auto">
+                <input type="number"
+                       id="inputUserId"
+                       class="form-control"
+                       aria-describedby="userIdHelpInline"
+                       placeholder=""
+                       name="inputUserId" required>
+            </div>
+            <div class="col-auto">
+                    <span id="userIdHelpInline" class="form-text">
+                      Numeric number e.g. 1, 3933, 23
+                    </span>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Find Recommendations</button>
+    </form>
+</div>
+
+<!--footer section-->
+<footer>
+
+    <script type="text/javascript">
+        var inputUserId = {{inputUserId | safe}};
+        // var articles = {{articles | safe}};
+        var recommender_comment = {{recommendation_comment | safe}};
+    </script>
+
+</footer>
+
+{% endblock %}
+
