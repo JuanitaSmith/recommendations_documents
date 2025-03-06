@@ -56,7 +56,6 @@ which satisfies Udacity's minimum requirements to pass the project.
 - Object-Oriented Programming - see `src/recommender.py` for custom recommender class
 - Applying the right recommendation technique for the right scenario:
 
-    - Exploratory Data Analysis
     - Rank-Based Recommendations for new users
     - User-User Based Collaborative Filtering where we have lots of history
     - Content-Based Recommendations, using NLP techniques in this project to search for documents with similar texts
@@ -101,11 +100,11 @@ that contains the minimum requirements to pass the project can be found in `note
 
 The notebook is broken down into 5 sections:
 
-- Exploratory Data Analysis
-- Rank-Based Recommendations for new users
-- User-User Based Collaborative Filtering where we have lots of history
-- Content-Based Recommendations, using NLP techniques in this project to search for documents with similar texts
-- Matrix Factorization to explore the hidden relationships and patterns through latent features where we have lots of history.
+I. [Exploratory Data Analysis](#Exploratory-Data-Analysis)<br>
+II. [Rank Based Recommendations](#Rank)<br>
+III. [User-User Based Collaborative Filtering](#User-User)<br>
+IV. [Content Based Recommendations](#Content-Recs)<br>
+V. [Matrix Factorization](#Matrix-Fact)<br>
 
 # 6. Flask Wep app instructions
 
