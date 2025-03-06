@@ -5,8 +5,8 @@ Use a blend of recommendation techniques such rank-based, collaborative filterin
 content-based, and matrix factorization
 to recommend documents to a user to read next.
 
-<img src="images/webapp_design/Slide1.png" style="max-width: 100%; height: auto;">
-
+[//]: # (<img src="images/webapp_design/Slide1.png" style="max-width: 100%; height: auto;">)
+<img src="images/webapp_design/Slide1.png" width="1000">
 
 
 
