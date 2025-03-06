@@ -17,13 +17,14 @@ to recommend documents to a user to read next.
 ### Table of contents
 <!-- TOC -->
 * [1. Project Motivation](#1-project-motivation)
-* [2. Skills learned:](#2-skills-learned)
+* [2. Skills applied in this project](#2-skills-applied-in-this-project)
 * [3. Installation](#3-installation)
 * [4. Input File Descriptions](#4-input-file-descriptions)
     * [Cleaning activities:](#cleaning-activities)
 * [5. Notebook instructions](#5-notebook-instructions)
 * [6. Flask Wep app instructions](#6-flask-wep-app-instructions)
     * [Instructions how to run the web app:](#instructions-how-to-run-the-web-app)
+* [7. Unit tests (optional)](#7-unit-tests-optional)
 * [8. Licensing, Authors, Acknowledgements<a name="licensing"></a>](#8-licensing-authors-acknowledgementsa-namelicensinga)
 <!-- TOC -->
 
@@ -156,7 +157,7 @@ to track interaction with the webapp.
 A configuration file `src/config.pg` contains defaults for the project structure and file paths. 
 Ideally do not change this structure.
 
-7. Unit tests (optional)
+# 7. Unit tests (optional)
 
 To run unittests run command `python -m unittest tests.test_recommender` in the root of your project in the terminal.
 
