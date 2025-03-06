@@ -100,11 +100,13 @@ that contains the minimum requirements to pass the project can be found in `note
 
 The notebook is broken down into 5 sections:
 
-I. [Exploratory Data Analysis](#Exploratory-Data-Analysis)<br>
-II. [Rank Based Recommendations](#Rank)<br>
-III. [User-User Based Collaborative Filtering](#User-User)<br>
-IV. [Content Based Recommendations](#Content-Recs)<br>
-V. [Matrix Factorization](#Matrix-Fact)<br>
+I. Exploratory Data Analysis<br>
+II.
+Rank Based Recommendations<br>
+III.
+User-User Based Collaborative Filtering<br>
+IV. Content Based Recommendations <br>
+V. Matrix Factorization
 
 # 6. Flask Wep app instructions
 
