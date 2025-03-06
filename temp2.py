@@ -4,6 +4,10 @@
 from src import Recommender
 from src import path_articles, path_interactions
 import argparse
+import nltk
+nltk.download('averaged_perceptron_tagger_eng')
+from collections import Counter
+import pandas as pd
 
 def parse_args():
     """ default arguments """
@@ -35,4 +39,3 @@ if __name__ == "__main__":
 
     print('Number of additional documents to read: {}'.format(
         len(recommendations)))
-

@@ -6,8 +6,6 @@ __pycache__
 *.db
 notebooks/Recommendations_with_IBM_original.ipynb
 ibmrecommenderapp/templates/keep.html
-README.md
-INSTRUCTIONS.md
 setup.py
 !/favicons/
 favicons

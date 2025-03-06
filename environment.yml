@@ -1,0 +1,27 @@
+# generated using `conda env export --from-history --name my_env > myenv.yml`
+
+name: recommendations
+channels:
+  - defaults
+  - https://repo.anaconda.com/pkgs/main
+  - https://repo.anaconda.com/pkgs/r
+dependencies:
+  - scikit-learn
+  - python=3.10
+  - nb_conda_kernels
+  - pandas
+  - notebook
+  - seaborn
+  - jupyter
+  - matplotlib
+  - numpy
+  - scipy
+  - spacy
+  - conda-forge::fuzzywuzzy
+  - conda-forge::pycodestyle
+  - statsmodels
+  - anaconda::nltk
+  - anaconda::flask
+  - fastparquet
+  - pyarrow
+prefix: /opt/anaconda3/envs/recommendations

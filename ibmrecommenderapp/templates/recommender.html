@@ -60,7 +60,12 @@
 
 <!--recommendation comment to see if collaborative,
 ranked or content was triggered-->
-<p class="text-center mt-4 mb-3">{{recommender_comment}}</p>
+<p class="text-center mt-3 mb-3">{{recommender_comment}}</p>
+
+{% if keywords|length > 0 %}
+<p class="text-center small">Your interests: {{keywords}}</p>
+{% endif %}
+
 
 <!--    recommendation cards-->
 <div class="album py-5 bg-body-tertiary">
@@ -75,8 +80,8 @@ ranked or content was triggered-->
                     <h5 class="card-header">
                         {{article['doc_full_name']}}
                     </h5>
-                    <div class="card-body">
-                        <p class="card-text">{{article['doc_description'][:200]}}.</p>
+                    <div class="card-body" style="overflow-y: auto; overflow-x:hidden;">
+                        <p class="card-text small">{{article['doc_description']}}.</p>
                     </div>
                     <div class="card-footer">
                         <div class="d-flex justify-content-between align-items-center">

@@ -1,7 +1,117 @@
-2025-03-04 12:49:52 INFO     Loading data/articles_community.csv...
-2025-03-04 12:49:52 INFO     Loading data/user_item_interactions.csv...
-2025-03-04 12:49:52 INFO     Article contents loaded with shape (1056, 4)
-2025-03-04 12:49:52 INFO     User interactions loaded with shape (45993, 3)
-2025-03-04 12:49:52 INFO     Content dataset cleaned, shape (1034, 4) and columns ['doc_body', 'doc_description', 'doc_full_name', 'doc_body_all']
-2025-03-04 12:49:52 INFO     Interaction dataset cleaned, shape (21454, 3) an columns ['article_id', 'title', 'user_id']
-2025-03-04 12:49:53 INFO     Not recommendations found
+2025-03-06 08:45:13 INFO     [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:3001
+ * Running on http://192.168.1.80:3001
+2025-03-06 08:45:13 INFO     [33mPress CTRL+C to quit[0m
+2025-03-06 08:45:16 INFO     Loading data/articles_community.csv...
+2025-03-06 08:45:16 INFO     Loading data/user_item_interactions.csv...
+2025-03-06 08:45:16 INFO     Article contents loaded with shape (1056, 4)
+2025-03-06 08:45:16 INFO     User interactions loaded with shape (45993, 3)
+2025-03-06 08:45:16 INFO     Content dataset cleaned, shape (1034, 4) and columns ['doc_body', 'doc_description', 'doc_full_name', 'doc_body_all']
+2025-03-06 08:45:16 INFO     Interaction dataset cleaned, shape (21454, 3) an columns ['article_id', 'title', 'user_id']
+2025-03-06 08:45:16 INFO     127.0.0.1 - - [06/Mar/2025 08:45:16] "GET / HTTP/1.1" 200 -
+2025-03-06 08:45:16 INFO     127.0.0.1 - - [06/Mar/2025 08:45:16] "[33mGET /favicons/favicon.ico HTTP/1.1[0m" 404 -
+2025-03-06 08:45:16 INFO     127.0.0.1 - - [06/Mar/2025 08:45:16] "[36mGET /static/img/linkedinlogo.png HTTP/1.1[0m" 304 -
+2025-03-06 08:45:16 INFO     127.0.0.1 - - [06/Mar/2025 08:45:16] "[36mGET /static/img/githublogo.png HTTP/1.1[0m" 304 -
+2025-03-06 08:45:20 INFO     127.0.0.1 - - [06/Mar/2025 08:45:20] "GET / HTTP/1.1" 200 -
+2025-03-06 08:45:20 INFO     127.0.0.1 - - [06/Mar/2025 08:45:20] "[33mGET /favicons/favicon.ico HTTP/1.1[0m" 404 -
+2025-03-06 08:45:20 INFO     127.0.0.1 - - [06/Mar/2025 08:45:20] "[36mGET /static/img/linkedinlogo.png HTTP/1.1[0m" 304 -
+2025-03-06 08:45:20 INFO     127.0.0.1 - - [06/Mar/2025 08:45:20] "[36mGET /static/img/githublogo.png HTTP/1.1[0m" 304 -
+2025-03-06 08:46:20 INFO     127.0.0.1 - - [06/Mar/2025 08:46:20] "GET / HTTP/1.1" 200 -
+2025-03-06 08:46:20 INFO     127.0.0.1 - - [06/Mar/2025 08:46:20] "[36mGET /static/img/linkedinlogo.png HTTP/1.1[0m" 304 -
+2025-03-06 08:46:20 INFO     127.0.0.1 - - [06/Mar/2025 08:46:20] "[36mGET /static/img/githublogo.png HTTP/1.1[0m" 304 -
+2025-03-06 08:46:20 INFO     127.0.0.1 - - [06/Mar/2025 08:46:20] "[33mGET /favicons/favicon.ico HTTP/1.1[0m" 404 -
+2025-03-06 08:46:21 INFO     127.0.0.1 - - [06/Mar/2025 08:46:21] "GET / HTTP/1.1" 200 -
+2025-03-06 08:46:21 INFO     127.0.0.1 - - [06/Mar/2025 08:46:21] "[36mGET /static/img/githublogo.png HTTP/1.1[0m" 304 -
+2025-03-06 08:46:21 INFO     127.0.0.1 - - [06/Mar/2025 08:46:21] "[36mGET /static/img/linkedinlogo.png HTTP/1.1[0m" 304 -
+2025-03-06 08:46:21 INFO     127.0.0.1 - - [06/Mar/2025 08:46:21] "[33mGET /favicons/favicon.ico HTTP/1.1[0m" 404 -
+2025-03-06 08:47:21 INFO     127.0.0.1 - - [06/Mar/2025 08:47:21] "GET / HTTP/1.1" 200 -
+2025-03-06 08:47:21 INFO     127.0.0.1 - - [06/Mar/2025 08:47:21] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+2025-03-06 08:47:21 INFO     127.0.0.1 - - [06/Mar/2025 08:47:21] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+2025-03-06 08:47:21 INFO     127.0.0.1 - - [06/Mar/2025 08:47:21] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-06 08:47:21 INFO     127.0.0.1 - - [06/Mar/2025 08:47:21] "[33mGET /favicons/favicon.ico HTTP/1.1[0m" 404 -
+2025-03-06 08:47:22 INFO     127.0.0.1 - - [06/Mar/2025 08:47:22] "GET / HTTP/1.1" 200 -
+2025-03-06 08:47:22 INFO     127.0.0.1 - - [06/Mar/2025 08:47:22] "GET /static/img/linkedinlogo.png HTTP/1.1" 200 -
+2025-03-06 08:47:22 INFO     127.0.0.1 - - [06/Mar/2025 08:47:22] "GET /static/img/githublogo.png HTTP/1.1" 200 -
+2025-03-06 08:47:22 INFO     127.0.0.1 - - [06/Mar/2025 08:47:22] "[33mGET /favicons/favicon.ico HTTP/1.1[0m" 404 -
+2025-03-06 11:03:24 INFO     127.0.0.1 - - [06/Mar/2025 11:03:24] "GET / HTTP/1.1" 200 -
+2025-03-06 11:03:24 INFO     127.0.0.1 - - [06/Mar/2025 11:03:24] "[36mGET /static/img/githublogo.png HTTP/1.1[0m" 304 -
+2025-03-06 11:03:24 INFO     127.0.0.1 - - [06/Mar/2025 11:03:24] "[36mGET /static/img/linkedinlogo.png HTTP/1.1[0m" 304 -
+2025-03-06 11:03:24 INFO     127.0.0.1 - - [06/Mar/2025 11:03:24] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+2025-03-06 11:03:24 INFO     127.0.0.1 - - [06/Mar/2025 11:03:24] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+2025-03-06 11:03:27 INFO     User id received is 2
+2025-03-06 11:03:27 INFO     Search text received is None
+2025-03-06 11:03:27 INFO     Interactions for user 2 exists
+2025-03-06 11:03:27 INFO     Collaborative filtering recommendation was triggered
+2025-03-06 11:03:28 INFO     127.0.0.1 - - [06/Mar/2025 11:03:28] "POST /recommender HTTP/1.1" 200 -
+2025-03-06 11:03:28 INFO     127.0.0.1 - - [06/Mar/2025 11:03:28] "[36mGET /static/img/linkedinlogo.png HTTP/1.1[0m" 304 -
+2025-03-06 11:03:28 INFO     127.0.0.1 - - [06/Mar/2025 11:03:28] "[36mGET /static/img/githublogo.png HTTP/1.1[0m" 304 -
+2025-03-06 11:03:35 INFO     User id received is 999
+2025-03-06 11:03:35 INFO     Search text received is None
+2025-03-06 11:03:35 INFO     Interactions for user 999 exists
+2025-03-06 11:03:35 INFO     Collaborative filtering recommendation was triggered
+2025-03-06 11:03:35 INFO     Loading tfidf vectorizer...
+2025-03-06 11:03:36 INFO     User 999 has <= 3 interactions, switching to content based recommendations with text "Use the Machine Learning Library"
+2025-03-06 11:03:36 INFO     127.0.0.1 - - [06/Mar/2025 11:03:36] "POST /recommender HTTP/1.1" 200 -
+2025-03-06 11:03:36 INFO     127.0.0.1 - - [06/Mar/2025 11:03:36] "[36mGET /static/img/linkedinlogo.png HTTP/1.1[0m" 304 -
+2025-03-06 11:03:36 INFO     127.0.0.1 - - [06/Mar/2025 11:03:36] "[36mGET /static/img/githublogo.png HTTP/1.1[0m" 304 -
+2025-03-06 11:03:50 INFO     User id received is 99999
+2025-03-06 11:03:50 INFO     Search text received is None
+2025-03-06 11:03:50 INFO     No Interactions for user 99999 exists
+2025-03-06 11:03:50 INFO     Ranked-based recommendation was triggered
+2025-03-06 11:03:50 INFO     127.0.0.1 - - [06/Mar/2025 11:03:50] "POST /recommender HTTP/1.1" 200 -
+2025-03-06 11:03:50 INFO     127.0.0.1 - - [06/Mar/2025 11:03:50] "[36mGET /static/img/githublogo.png HTTP/1.1[0m" 304 -
+2025-03-06 11:03:50 INFO     127.0.0.1 - - [06/Mar/2025 11:03:50] "[36mGET /static/img/linkedinlogo.png HTTP/1.1[0m" 304 -
+2025-03-06 11:12:14 INFO     User id received is 2
+2025-03-06 11:12:14 INFO     Search text received is None
+2025-03-06 11:12:14 INFO     Interactions for user 2 exists
+2025-03-06 11:12:14 INFO     Collaborative filtering recommendation was triggered
+2025-03-06 11:12:14 INFO     127.0.0.1 - - [06/Mar/2025 11:12:14] "POST /recommender HTTP/1.1" 200 -
+2025-03-06 11:12:14 INFO     127.0.0.1 - - [06/Mar/2025 11:12:14] "[36mGET /static/img/linkedinlogo.png HTTP/1.1[0m" 304 -
+2025-03-06 11:12:14 INFO     127.0.0.1 - - [06/Mar/2025 11:12:14] "[36mGET /static/img/githublogo.png HTTP/1.1[0m" 304 -
+2025-03-06 11:12:43 INFO     User id received is 23
+2025-03-06 11:12:43 INFO     Search text received is None
+2025-03-06 11:12:43 INFO     Interactions for user 23 exists
+2025-03-06 11:12:43 INFO     Collaborative filtering recommendation was triggered
+2025-03-06 11:12:43 INFO     User 23 has <= 3 interactions, switching to content based recommendations with text "Improving Real-Time Object Detection with YOLO. 
+Time Series Prediction Using Recurrent Neural Networks (LSTMs)"
+2025-03-06 11:12:43 INFO     127.0.0.1 - - [06/Mar/2025 11:12:43] "POST /recommender HTTP/1.1" 200 -
+2025-03-06 11:12:43 INFO     127.0.0.1 - - [06/Mar/2025 11:12:43] "[36mGET /static/img/githublogo.png HTTP/1.1[0m" 304 -
+2025-03-06 11:12:43 INFO     127.0.0.1 - - [06/Mar/2025 11:12:43] "[36mGET /static/img/linkedinlogo.png HTTP/1.1[0m" 304 -
+2025-03-06 11:13:00 INFO     User id received is 999
+2025-03-06 11:13:00 INFO     Search text received is None
+2025-03-06 11:13:00 INFO     Interactions for user 999 exists
+2025-03-06 11:13:00 INFO     Collaborative filtering recommendation was triggered
+2025-03-06 11:13:00 INFO     User 999 has <= 3 interactions, switching to content based recommendations with text "Use the Machine Learning Library"
+2025-03-06 11:13:00 INFO     127.0.0.1 - - [06/Mar/2025 11:13:00] "POST /recommender HTTP/1.1" 200 -
+2025-03-06 11:13:00 INFO     127.0.0.1 - - [06/Mar/2025 11:13:00] "[36mGET /static/img/linkedinlogo.png HTTP/1.1[0m" 304 -
+2025-03-06 11:13:00 INFO     127.0.0.1 - - [06/Mar/2025 11:13:00] "[36mGET /static/img/githublogo.png HTTP/1.1[0m" 304 -
+2025-03-06 11:13:16 INFO     User id received is 250
+2025-03-06 11:13:16 INFO     Search text received is None
+2025-03-06 11:13:16 INFO     Interactions for user 250 exists
+2025-03-06 11:13:16 INFO     Collaborative filtering recommendation was triggered
+2025-03-06 11:13:16 INFO     User 250 has <= 3 interactions, switching to content based recommendations with text "Self-service data preparation with IBM Data Refinery. 
+Dimensionality Reduction Algorithms"
+2025-03-06 11:13:16 INFO     127.0.0.1 - - [06/Mar/2025 11:13:16] "POST /recommender HTTP/1.1" 200 -
+2025-03-06 11:13:16 INFO     127.0.0.1 - - [06/Mar/2025 11:13:16] "[36mGET /static/img/githublogo.png HTTP/1.1[0m" 304 -
+2025-03-06 11:13:16 INFO     127.0.0.1 - - [06/Mar/2025 11:13:16] "[36mGET /static/img/linkedinlogo.png HTTP/1.1[0m" 304 -
+2025-03-06 11:13:29 INFO     User id received is 1528
+2025-03-06 11:13:29 INFO     Search text received is None
+2025-03-06 11:13:29 INFO     Interactions for user 1528 exists
+2025-03-06 11:13:29 INFO     Collaborative filtering recommendation was triggered
+2025-03-06 11:13:29 INFO     127.0.0.1 - - [06/Mar/2025 11:13:29] "POST /recommender HTTP/1.1" 200 -
+2025-03-06 11:13:29 INFO     127.0.0.1 - - [06/Mar/2025 11:13:29] "[36mGET /static/img/linkedinlogo.png HTTP/1.1[0m" 304 -
+2025-03-06 11:13:29 INFO     127.0.0.1 - - [06/Mar/2025 11:13:29] "[36mGET /static/img/githublogo.png HTTP/1.1[0m" 304 -
+2025-03-06 11:13:40 INFO     User id received is 2
+2025-03-06 11:13:40 INFO     Search text received is None
+2025-03-06 11:13:40 INFO     Interactions for user 2 exists
+2025-03-06 11:13:40 INFO     Collaborative filtering recommendation was triggered
+2025-03-06 11:13:40 INFO     127.0.0.1 - - [06/Mar/2025 11:13:40] "POST /recommender HTTP/1.1" 200 -
+2025-03-06 11:13:40 INFO     127.0.0.1 - - [06/Mar/2025 11:13:40] "[36mGET /static/img/linkedinlogo.png HTTP/1.1[0m" 304 -
+2025-03-06 11:13:40 INFO     127.0.0.1 - - [06/Mar/2025 11:13:40] "[36mGET /static/img/githublogo.png HTTP/1.1[0m" 304 -
+2025-03-06 11:25:13 INFO     User id received is 2
+2025-03-06 11:25:13 INFO     Search text received is xgboost
+2025-03-06 11:25:13 INFO     Content-based recommendation triggered with text xgboost
+2025-03-06 11:25:13 INFO     127.0.0.1 - - [06/Mar/2025 11:25:13] "POST /recommender HTTP/1.1" 200 -
+2025-03-06 11:25:13 INFO     127.0.0.1 - - [06/Mar/2025 11:25:13] "[36mGET /static/img/githublogo.png HTTP/1.1[0m" 304 -
+2025-03-06 11:25:13 INFO     127.0.0.1 - - [06/Mar/2025 11:25:13] "[36mGET /static/img/linkedinlogo.png HTTP/1.1[0m" 304 -

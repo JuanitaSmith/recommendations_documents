@@ -1,0 +1,17 @@
+pandas
+numpy
+matplotlib
+seaborn
+scipy
+scikit-learn
+jupyter
+notebook
+nb_conda_kernels
+spacy
+fuzzywuzzy
+pycodestyle_magic
+statsmodels
+nltk
+flask
+pyarrow
+fastparquet

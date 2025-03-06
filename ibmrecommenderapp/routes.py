@@ -29,6 +29,8 @@ def index():
 @app.route('/recommender', methods=['POST'])
 def recommender():
 
+    keywords = []
+
     # get user id from form
     inputUserId = int(request.form.get('inputUserId'))
     if not inputUserId:
@@ -54,14 +56,14 @@ def recommender():
         articles = r.make_content_recommendations(
             search_text,
             user_id=inputUserId,
-            top_n=9
+            top_n=15
         )
         if len(articles) == 0:
             recommender_comment =(
                 "No documents found for search '{}'".format(search_text))
         else:
             recommender_comment = (
-                "Content based search using '{}'".format(search_text))
+                "Content based recommendation using '{}'".format(search_text))
     else:
         user_exist = (r.df_interactions['user_id'] == inputUserId).any()
         if user_exist:
@@ -74,12 +76,15 @@ def recommender():
 
             articles, search_text = r.user_user_recommendations(
                 user_id=inputUserId,
-                top_n=9
+                top_n=15
             )
             if search_text:
                 recommender_comment = (
                     "Content based search using '{}'".format(search_text))
             else:
+                keywords = r.get_user_interests(
+                    user_id=inputUserId,
+                    top_n=15)
                 recommender_comment = (
                     'What users with similar tastes are reading')
         else:
@@ -88,8 +93,9 @@ def recommender():
                 'No Interactions for user {} exists'.format(inputUserId))
             text = 'Ranked-based recommendation was triggered'
             r.logger.info(text)
-            articles = r.get_top_articles(n=9)
-            recommender_comment = "Most popular documents"
+            articles = r.get_top_articles(n=15)
+            recommender_comment = ("As it's your first visit, "
+                                   "we recommend these most popular documents")
 
     nav_texts = " - Recommendations for UserID"
 
@@ -98,7 +104,8 @@ def recommender():
         inputUserId=inputUserId,
         recommender_comment=recommender_comment,
         nav_texts=nav_texts,
-        articles=articles)
+        articles=articles,
+        keywords=keywords)
 
 
 @app.route('/view', methods=['POST'])

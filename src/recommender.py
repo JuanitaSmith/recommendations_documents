@@ -6,9 +6,13 @@ from typing import Dict, List, Set
 
 import numpy as np
 import pandas as pd
+
+import nltk
+nltk.download('averaged_perceptron_tagger_eng')
 from nltk.corpus import stopwords, wordnet
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
+
 from pandas import DataFrame
 from scipy.sparse.linalg import svds
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -297,14 +301,13 @@ class Recommender:
         user_item_matrix = self.create_user_item_matrix()
 
         # get all the documents input user has read
-        docs_read = user_item_matrix.loc[user_id]
-        docs_read = docs_read[docs_read == 1].index
+        docs_read = self.get_documents_read(user_id)
 
         # if user read 2 documents or fewer, rather do a content-based search
         # using the titles of the documents as a search term
         if len(docs_read) <= 2:
             content_read = self.df_content.loc[
-                docs_read, 'doc_full_name'].to_frame()
+                list(docs_read), 'doc_full_name'].to_frame()
             search_text = re.sub(
                 '\s+\.',
                 '.',
@@ -313,7 +316,7 @@ class Recommender:
             top_articles = self.make_content_recommendations(
                 search_text,
                 user_id=user_id,
-                top_n=9
+                top_n=top_n
             )
 
             self.logger.info('User {} has <= 3 interactions, '
@@ -466,7 +469,7 @@ class Recommender:
         INPUT:
         user_id: int -> Id of a user
 
-        OUTPUT (list) article_ids user has read
+        OUTPUT: Set -> article_ids user has read
         """
 
         docs_read = (self.df_interactions[
@@ -475,6 +478,39 @@ class Recommender:
                      .tolist())
 
         return set(docs_read)
+
+    def get_user_interests(self, user_id: str, top_n: int = 10) -> List:
+        """
+        Get a list of keywords to describe what a user is most interested in
+
+        INPUT:
+        user_id: int -> Id of a user
+        top-n: int -> Number of most used keywords to return
+
+        OUTPUT:
+        top_keywords: list, List containing most used nouns and verbs
+        """
+
+        # get all the documents titles a user has read
+        docs_read = (self.df_interactions[
+                         self.df_interactions['user_id'] == user_id][
+                         'title']
+                     .tolist())
+
+        # keep only keywords that are nouns and verbs
+        keywords = []
+        for title in docs_read:
+            keyword = self.tokenize(title)
+            pos_tags = nltk.pos_tag(keyword)
+            for tag in pos_tags:
+                print(tag[0], tag[1])
+                if tag[1] in ['NN', 'NNP', 'NNS', 'VB']:
+                    keywords.append(tag[0])
+
+        # get the top n keywords
+        top_keywords = pd.value_counts(keywords)[:top_n].index.tolist()
+
+        return top_keywords
 
     def make_content_recommendations(
             self,
