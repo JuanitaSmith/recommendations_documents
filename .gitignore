@@ -10,3 +10,4 @@ setup.py
 !/favicons/
 favicons
 docs
+.DS_Store
