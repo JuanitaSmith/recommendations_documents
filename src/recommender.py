@@ -497,13 +497,16 @@ class Recommender:
                          'title']
                      .tolist())
 
+        # ids_read = self.get_documents_read(user_id)
+        # docs_read = self.df_content[
+        #     self.df_content.index.isin(ids_read)]['doc_description'].tolist()
+
         # keep only keywords that are nouns and verbs
         keywords = []
         for title in docs_read:
             keyword = self.tokenize(title)
             pos_tags = nltk.pos_tag(keyword)
             for tag in pos_tags:
-                print(tag[0], tag[1])
                 if tag[1] in ['NN', 'NNP', 'NNS', 'VB']:
                     keywords.append(tag[0])
 
@@ -584,7 +587,13 @@ class Recommender:
 
     def matrix_factorization(self, user_id, top_n=10):
         """
-        #TODO
+        Use SVD matrix factorization to get recommendations
+
+        INPUT: user_id: integer, id of the user we make recommendations for
+        top_n: int -> Number of documents to recommend
+
+        OUTPUT:
+        prediction_df -> DataFrame containing recommendations
 
         """
         # create a user-item matrix
@@ -631,8 +640,8 @@ class Recommender:
             top_articles = self.get_contents(similar_articles[:top_n])
 
         else:
-            print("Not recommendations found")
-            self.logger.info("Not recommendations found")
+            print("No recommendations found")
+            self.logger.info("No recommendations found")
 
         return prediction_df
 

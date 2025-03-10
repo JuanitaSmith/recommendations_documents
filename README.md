@@ -11,7 +11,7 @@ to recommend documents to a user to read next.
 
 
 #### Created by: Juanita Smith
-#### Last date: February 2025
+#### Last date: March 2025
 ---
 
 ### Table of contents
@@ -20,18 +20,18 @@ to recommend documents to a user to read next.
 * [2. Skills applied in this project](#2-skills-applied-in-this-project)
 * [3. Installation](#3-installation)
 * [4. Input File Descriptions](#4-input-file-descriptions)
-    * [Cleaning activities:](#cleaning-activities)
-* [5. Notebook instructions](#5-notebook-instructions)
-* [6. Flask Wep app instructions](#6-flask-wep-app-instructions)
+    * [Cleaning Activities:](#cleaning-activities)
+* [5. Notebook Instructions](#5-notebook-instructions)
+* [6. Flask Wep App Instructions](#6-flask-wep-app-instructions)
     * [Instructions how to run the web app:](#instructions-how-to-run-the-web-app)
-* [7. Unit tests (optional)](#7-unit-tests-optional)
+* [7. Unit tests](#7-unit-tests-optional)
 * [8. Licensing, Authors, Acknowledgements<a name="licensing"></a>](#8-licensing-authors-acknowledgementsa-namelicensinga)
 <!-- TOC -->
 
 
 # 1. Project Motivation
 
-Project and data was sponsored by [IBM Cloud]('https://eu-gb.dataplatform.cloud.ibm.com/).
+Project and data was sponsored by [IBM Cloud](https://eu-gb.dataplatform.cloud.ibm.com/).
 
 In the IBM Watson Studio, there is a large collaborative community ecosystem of articles, datasets, notebooks, 
 and other AI and ML assets.
@@ -57,10 +57,10 @@ which satisfies Udacity's minimum requirements to pass the project.
 - Object-Oriented Programming - see `src/recommender.py` for custom recommender class
 - Applying the right recommendation technique for the right scenario:
 
-    - Rank-Based Recommendations for new users
-    - User-User Based Collaborative Filtering where we have lots of history
-    - Content-Based Recommendations, using NLP techniques in this project to search for documents with similar texts
-    - Matrix Factorization to explore the hidden relationships and patterns through latent features where we have lots of history. 
+    - Rank-Based Recommendations for new users without any interactions.
+    - User-User Based Collaborative Filtering where we have lots of history of interactions.
+    - Content-Based Recommendations, using NLP techniques to search for documents with similar texts
+    - Matrix Factorization to explore the hidden relationships and patterns through latent features.
 
 # 3. Installation
 To clone the repository. use `git clone https://github.com/JuanitaSmith/recommendations_documents`
@@ -73,28 +73,29 @@ To clone the repository. use `git clone https://github.com/JuanitaSmith/recommen
 
 # 4. Input File Descriptions
 
-- Two files were provided by Udacity and [IBM](https://eu-gb.dataplatform.cloud.ibm.com/), and stored in `data` folder
+- Two files were provided by Udacity and [IBM](https://eu-gb.dataplatform.cloud.ibm.com/), and stored in the `data` folder.
 
 1. `articles_community.csv` -> Contains the **content** of each article:
    - `article_id`: unique key identifying each document
    - `doc_body`: main text of the article
    - `doc_description`: short summary of the article
    - `doc_full_name`: title of the document
-   - `doc_status`: contains value "Live" for all records
+   - `doc_status`: contains value "Live" for all records 
 
-2. `user_item_interactions.csv` -> Describes **interactions**; which users read which documents
+
+2. `user_item_interactions.csv` -> Describes **interactions**; which users read which documents.
    - `article_id`: unique key identifying each document
    - `title`: lower case version of doc_full_name above
    - `email`: encoded email uniquely identifying a user
 
-### Cleaning activities:
+### Cleaning Activities:
 - Drop duplicate article_ids from contents
 - Drop interactions where the article is not present in the contents (webapp only)
 - Convert email into a numerical user_id field
 - Drop null values `doc_description` and `doc_body`
 
 
-# 5. Notebook instructions
+# 5. Notebook Instructions
 
 The notebook
 that contains the minimum requirements to pass the project can be found in `notebooks\Recommendations_with_IBM.ipynb`.
@@ -109,7 +110,7 @@ User-User Based Collaborative Filtering<br>
 IV. Content Based Recommendations <br>
 V. Matrix Factorization
 
-# 6. Flask Wep app instructions
+# 6. Flask Wep App Overview
 
 The web app is not hosted, and should be run locally.
 It was developed using Flask and [Bootstrap](https://getbootstrap.com)
@@ -120,22 +121,26 @@ It was developed using Flask and [Bootstrap](https://getbootstrap.com)
 
 1) In the project's root directory run `run.py` in your shell.
 2) In your web browser, go to `http://localhost:3001` to view the site.
-3) Enter a valid user id (from the [interactions dataset](data/user_item_interactions_clean.csv) <br>
+3) Enter a valid user id (from the [interactions dataset](data/user_item_interactions_clean.csv)) <br>
 4) Recommendations will be calculated using a blend of techniques: 
    #### 4a) **Rank-based** for users without any interactions, showing the articles with the most interactions.
 
-    Status bar indicate the type the user and recommendation technique used.
+    Status bar indicate the type of user and recommendation technique used.
   
-     <img src="images/ranked_based.png" width=600>
+     <img src="images/ranked_based.png" width=800>
    
     #### 4b) Collaborative filtering for users with at least three interactions.
 
-      This approach finds similar users who read the same documents as input user
+      This approach finds similar users
+who read the same documents as the input user
         and propose documents these similar users have read.
+   Status bar indicates that collaborative filtering was used,
+   and a list of most frequently read nouns and verbs from article titles gives us a clue
+   what the user is interested in.
 
    **Dot product** is used as the similarity metrics.
 
-    <img src="images/collaborative.png" width=600>
+    <img src="images/collaborative.png" width="800">
 
     #### 4c) **Content-based** recommendations based on search terms the user enter.
 
@@ -147,7 +152,7 @@ It was developed using Flask and [Bootstrap](https://getbootstrap.com)
         to find documents with similar words as the search text
         using **cosine similarity**.
 
-    <img src="images/content_based.png" width=600>
+    <img src="images/content_based.png" width=800>
 
 
 A log file `logs\log.log` will be created during execution
@@ -157,7 +162,7 @@ to track interaction with the webapp.
 A configuration file `src/config.pg` contains defaults for the project structure and file paths. 
 Ideally do not change this structure.
 
-# 7. Unit tests (optional)
+# 7. Unit tests
 
 To run unittests run command `python -m unittest tests.test_recommender` in the root of your project in the terminal.
 
