@@ -1,25 +1,2 @@
-2025-03-10 16:10:08 WARNING   * Debugger is active!
-2025-03-10 16:10:08 INFO      * Debugger PIN: 882-514-867
-2025-03-10 16:10:10 INFO     Loading data/articles_community.csv...
-2025-03-10 16:10:10 INFO     Loading data/user_item_interactions.csv...
-2025-03-10 16:10:10 INFO     Article contents loaded with shape (1056, 4)
-2025-03-10 16:10:10 INFO     User interactions loaded with shape (45993, 3)
-2025-03-10 16:10:10 INFO     Content dataset cleaned, shape (1034, 4) and columns ['doc_body', 'doc_description', 'doc_full_name', 'doc_body_all']
-2025-03-10 16:10:10 INFO     Interaction dataset cleaned, shape (21454, 3) an columns ['article_id', 'title', 'user_id']
-2025-03-10 16:10:10 INFO     127.0.0.1 - - [10/Mar/2025 16:10:10] "GET / HTTP/1.1" 200 -
-2025-03-10 16:10:10 INFO     127.0.0.1 - - [10/Mar/2025 16:10:10] "[33mGET /site.webmanifest HTTP/1.1[0m" 404 -
-2025-03-10 16:10:10 INFO     127.0.0.1 - - [10/Mar/2025 16:10:10] "[36mGET /static/img/linkedinlogo.png HTTP/1.1[0m" 304 -
-2025-03-10 16:10:10 INFO     127.0.0.1 - - [10/Mar/2025 16:10:10] "[36mGET /static/img/githublogo.png HTTP/1.1[0m" 304 -
-2025-03-10 16:16:37 INFO     127.0.0.1 - - [10/Mar/2025 16:16:37] "GET / HTTP/1.1" 200 -
-2025-03-10 16:16:37 INFO     127.0.0.1 - - [10/Mar/2025 16:16:37] "[36mGET /static/img/linkedinlogo.png HTTP/1.1[0m" 304 -
-2025-03-10 16:16:37 INFO     127.0.0.1 - - [10/Mar/2025 16:16:37] "[36mGET /static/img/githublogo.png HTTP/1.1[0m" 304 -
-2025-03-10 16:16:53 INFO     127.0.0.1 - - [10/Mar/2025 16:16:53] "GET / HTTP/1.1" 200 -
-2025-03-10 16:16:53 INFO     127.0.0.1 - - [10/Mar/2025 16:16:53] "[36mGET /static/img/linkedinlogo.png HTTP/1.1[0m" 304 -
-2025-03-10 16:16:53 INFO     127.0.0.1 - - [10/Mar/2025 16:16:53] "[36mGET /static/img/githublogo.png HTTP/1.1[0m" 304 -
-2025-03-10 16:17:00 INFO     User id received is 2
-2025-03-10 16:17:00 INFO     Search text received is None
-2025-03-10 16:17:00 INFO     Interactions for user 2 exists
-2025-03-10 16:17:00 INFO     Collaborative filtering recommendation was triggered
-2025-03-10 16:17:01 INFO     127.0.0.1 - - [10/Mar/2025 16:17:01] "POST /recommender HTTP/1.1" 200 -
-2025-03-10 16:17:01 INFO     127.0.0.1 - - [10/Mar/2025 16:17:01] "[36mGET /static/img/linkedinlogo.png HTTP/1.1[0m" 304 -
-2025-03-10 16:17:01 INFO     127.0.0.1 - - [10/Mar/2025 16:17:01] "[36mGET /static/img/githublogo.png HTTP/1.1[0m" 304 -
+2025-03-10 19:14:09 WARNING   * Debugger is active!
+2025-03-10 19:14:09 INFO      * Debugger PIN: 882-514-867

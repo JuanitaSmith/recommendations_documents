@@ -330,7 +330,8 @@ class Recommender:
                 user_item=user_item_matrix
             )
 
-            nearest_user_id = neighbors_df[:top_n + 10].index.values.tolist()
+            # select the top 5 neighbors
+            nearest_user_id = neighbors_df[:5].index.values.tolist()
 
             # reduce the user_item matrix to only nearest neighbors
             neighbors_docs = user_item_matrix.reindex(nearest_user_id)
@@ -348,8 +349,9 @@ class Recommender:
                  top_article_interactions],
                 axis=1)
             similar_articles.columns = ['similarity', 'num_interactions']
-            similar_articles = similar_articles.drop(docs_read,
-                                                     errors='ignore')
+            similar_articles = similar_articles.drop(
+                docs_read,
+                errors='ignore')
             similar_articles.sort_values(by=['similarity', 'num_interactions'],
                                          ascending=False, inplace=True)
 
