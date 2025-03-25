@@ -598,54 +598,40 @@ class Recommender:
         prediction_df -> DataFrame containing recommendations
 
         """
-        # create a user-item matrix
+        # Create a user-item matrix
         user_item_matrix = self.create_user_item_matrix()
+        if user_id not in user_item_matrix.index:
+            return pd.DataFrame()
+        
 
-        # Decompose the matrix using training dataset with SVD with k latent features
-        U, sigma, Vt = svds(np.array(user_item_matrix), k=400)
+        # Decompose the matrix using SVD
+        U, sigma, Vt = svds(user_item_matrix.values, k=400)
 
-        # correct shape of s (latent features)
+        # Correct shape of sigma
         sigma = np.diag(sigma)
 
-        # predict which documents users will enjoy using the dot product
-        prediction = np.abs(np.around(np.dot(np.dot(U, sigma), Vt), 0))
-        prediction_df = pd.DataFrame(prediction,
-                                     columns=user_item_matrix.columns,
-                                     index=user_item_matrix.index)
+        # Predict user interactions for all items
+        all_predictions = np.dot(np.dot(U, sigma), Vt)
+        predictions_df = pd.DataFrame(all_predictions, columns=user_item_matrix.columns, index=user_item_matrix.index)
 
-        # filter predictions to input user
-        prediction_df = prediction_df.loc[user_id].sort_values(ascending=False)
+        # Get the user's predicted interactions
+        user_predictions = predictions_df.loc[user_id]
 
-        # keep records where the predicted user will read the document
-        prediction_df = prediction_df[prediction_df > 0]
+        # Get the items the user has already interacted with
+        user_interactions = user_item_matrix.loc[user_id]
+        already_interacted = user_interactions[user_interactions > 0].index.tolist()
 
-        # Get and remove documents the user read already
-        docs_read = self.get_documents_read(user_id)
-        prediction_df.drop(docs_read, inplace=True, errors='ignore')
+        # Filter out already interacted items
+        recommendations = user_predictions.drop(already_interacted)
 
-        if prediction_df.shape[0] > 0:
+        # Get the top k recommendations
+        top_recommendations = recommendations.sort_values(ascending=False).head(top_n)
 
-            # merge and sort predictions and interactions
-            top_article_interactions = (
-                self.df_interactions.article_id.value_counts())
+        # Create a DataFrame for the results
+        recommendations_df = pd.DataFrame({'article_id': top_recommendations.index,
+                                        'predicted_preference': top_recommendations.values})
 
-            similar_articles = pd.concat(
-                [prediction_df, top_article_interactions],
-                axis=1,
-                join='inner')
-
-            similar_articles.columns = ['similarity', 'num_interactions']
-            similar_articles.sort_values(by=['similarity', 'num_interactions'],
-                                         ascending=False, inplace=True)
-
-            # add contents to our recommendations
-            top_articles = self.get_contents(similar_articles[:top_n])
-
-        else:
-            print("No recommendations found")
-            self.logger.info("No recommendations found")
-
-        return prediction_df
+        return recommendations_df
 
     def generate_tfidf_vectorizer(self):
         """ Generate and save tfidf vector object and matrix"""
